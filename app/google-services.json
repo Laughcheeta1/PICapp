@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "153298448990",
+    "firebase_url": "https://hear-390f6-default-rtdb.firebaseio.com",
+    "project_id": "hear-390f6",
+    "storage_bucket": "hear-390f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153298448990:android:20839773040ce3f3dd7acf",
+        "android_client_info": {
+          "package_name": "com.example.picapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "153298448990-5cmnhqq62e99efmmq3l4ccjtq88i6k6e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXjMm3XGZTyp0isIR5krD3XZUMum6D3cI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "153298448990-5cmnhqq62e99efmmq3l4ccjtq88i6k6e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

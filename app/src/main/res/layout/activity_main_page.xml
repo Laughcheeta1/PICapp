@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper2"
+    tools:context=".MainPage">
+
+    <TextView
+        android:id="@+id/Texto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="#6a51d5"
+        android:text="A que actividad te gustaria acceder?"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:id="@+id/VoiceTextButton"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/Texto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:drawableTop="@drawable/ic_baseline_record_voice_over_24"
+        android:text="Voz a texto" />
+
+    <Button
+        android:id="@+id/TextLog"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/VoiceTextButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:drawableTop="@drawable/ic_baseline_chat_24"
+        android:text="Historia"
+        />
+
+    <Button
+        android:id="@+id/SingOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="Sing Out" />
+
+
+
+
+</RelativeLayout>
