@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/informatica/Desktop/PICapp/app/src/main/res/layout/activity_agradecimientos.xml" value="0.358695652173913" />
         <entry key="..\:/Users/informatica/Desktop/PICapp/app/src/main/res/layout/activity_historico_textos.xml" value="0.1661600810536981" />
+        <entry key="..\:/Users/informatica/Desktop/PICapp/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/informatica/Desktop/PICapp/app/src/main/res/layout/activity_main_page.xml" value="0.1661600810536981" />
+        <entry key="..\:/Users/informatica/Desktop/PICapp/app/src/main/res/layout/activity_voice_to_text.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>
