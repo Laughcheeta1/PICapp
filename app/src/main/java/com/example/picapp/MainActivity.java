@@ -13,9 +13,8 @@ import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
-    private TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,29 +25,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView password = (TextView) findViewById(R.id.Password);
 
         Button loginButton = (Button) findViewById(R.id.LogInButton);
-        register = (Button) findViewById(R.id.Register);
+        Button register = (Button) findViewById(R.id.Register);
 
         //both password and username are admin
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
+                    //correc
+                    Toast.makeText(MainActivity.this, "Log In Succesfull", Toast.LENGTH_SHORT).show();
+                    openMainPage();
+                } else {
+                    //incorrect
+                    Toast.makeText(MainActivity.this, "Username or Password Incorrect", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
-
-
-        register.setOnClickListener(this);
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.Register:
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 openRegisterPage();
-                break;
-
-            case R.id.LogInButton:
-                openMainPage();
-                break;
-        }
+            }
+        });
 
     }
+
 
     public void openMainPage(){
         Intent intent = new Intent(this, MainPage.class);
@@ -59,4 +61,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent(this, RegisterUser.class);
         startActivity(intent);
     }
+
 }
