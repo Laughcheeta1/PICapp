@@ -13,7 +13,9 @@ import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,27 +26,37 @@ public class MainActivity extends AppCompatActivity {
         TextView password = (TextView) findViewById(R.id.Password);
 
         Button loginButton = (Button) findViewById(R.id.LogInButton);
+        register = (Button) findViewById(R.id.Register);
 
         //both password and username are admin
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
-                    //correc
-                    Toast.makeText(MainActivity.this, "Log In Succesfull", Toast.LENGTH_SHORT).show();
-                    openMainPage();
-                } else {
-                    //incorrect
-                    Toast.makeText(MainActivity.this, "Username or Password Incorrect", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+
+
+        register.setOnClickListener(this);
 
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.Register:
+                openRegisterPage();
+                break;
+
+            case R.id.LogInButton:
+                openMainPage();
+                break;
+        }
+
+    }
+
     public void openMainPage(){
         Intent intent = new Intent(this, MainPage.class);
         startActivity(intent);
     }
 
+    public void openRegisterPage(){
+        Intent intent = new Intent(this, RegisterUser.class);
+        startActivity(intent);
+    }
 }
