@@ -25,7 +25,7 @@
     </TextView>
 
     <EditText
-        android:id="@+id/Username"
+        android:id="@+id/Correo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/SignIn"
@@ -46,7 +46,7 @@
         android:id="@+id/Password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Username"
+        android:layout_below="@id/Correo"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
@@ -74,8 +74,7 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="#6a51d5"
         android:text="Log In"
-        android:textSize="15dp"
-        />
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/Register"
