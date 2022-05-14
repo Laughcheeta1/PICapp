@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.VideoView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainPage extends AppCompatActivity {
 
 
@@ -41,6 +43,7 @@ public class MainPage extends AppCompatActivity {
         SignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
                 SingOut();
             }
         });

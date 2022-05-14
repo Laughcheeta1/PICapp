@@ -91,6 +91,7 @@
         android:text="Register"
         android:textColor="@color/black"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/ForgotPassword"
         android:layout_width="wrap_content"
@@ -105,8 +106,7 @@
         android:padding="10dp"
         android:text="Forgot Password"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
