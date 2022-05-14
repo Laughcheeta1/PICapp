@@ -112,7 +112,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         Toast.makeText(RegisterUser.this, "El usuario ha sido registrado", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
 
-                                        //Devolverlo al LOG IN
+                                        startActivity(new Intent(RegisterUser.this, MainActivity.class));
                                     } else {
                                         Toast.makeText(RegisterUser.this, "No se pudo registrar, intentalo de nuevo", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);

@@ -3,6 +3,7 @@ package com.example.picapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -65,6 +66,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
                 if(task.isSuccessful()){
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(ForgotPassword.this, "Se ha enviado te ha enviado un correo para restablecer la contraseña", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(ForgotPassword.this, MainActivity.class));
                 }else{
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(ForgotPassword.this, "No se pudo completar la accion, trata de nuevo", Toast.LENGTH_LONG).show();
