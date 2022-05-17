@@ -93,21 +93,6 @@
         android:textColor="@color/black"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/ForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Register"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="#A020F0"
-        android:padding="10dp"
-        android:text="Forgot Password"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"

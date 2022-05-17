@@ -18,14 +18,12 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    TextView forgotPassword;
     FirebaseAuth mAuth;
     ProgressBar progressBar;
     Button register,loginButton;
@@ -53,8 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mAuth = FirebaseAuth.getInstance();
 
-        forgotPassword = (TextView) findViewById(R.id.ForgotPassword);
-        forgotPassword.setOnClickListener(this);
     }
 
     @Override
@@ -65,9 +61,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.LogInButton:
                 userLogin();
-                break;
-            case R.id.ForgotPassword:
-                startActivity(new Intent(this, ForgotPassword.class));
                 break;
         }
     }
