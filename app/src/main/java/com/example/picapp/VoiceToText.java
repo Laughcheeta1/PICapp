@@ -1,5 +1,6 @@
 package com.example.picapp;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +9,14 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -19,7 +26,9 @@ public class VoiceToText extends AppCompatActivity implements View.OnClickListen
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     Button goMainPage, iniciarVoice;
     TextView muestraVoice;
-    String textoAMandar;
+    DatabaseReference textoMandarDatos;
+    ProgressBar barraDeProgreso;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +42,12 @@ public class VoiceToText extends AppCompatActivity implements View.OnClickListen
         iniciarVoice.setOnClickListener(this);
 
         muestraVoice = (TextView) findViewById(R.id.MuestraVoice);
+        barraDeProgreso = (ProgressBar) findViewById(R.id.BarraDeProgreso);
+
+        textoMandarDatos = FirebaseDatabase.getInstance().getReference().child("UserText");
+
+
+
     }
 
 
@@ -71,10 +86,24 @@ public class VoiceToText extends AppCompatActivity implements View.OnClickListen
 
                     muestraVoice.setText(result.get(0));
 
-                    textoAMandar= result.get(0);
+                    barraDeProgreso.setVisibility(View.VISIBLE);
+                    textoMandarDatos.push().setValue(result.get(0)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Toast.makeText(VoiceToText.this, "Se ha subido el texto a la base de datos", Toast.LENGTH_SHORT).show();
+                                barraDeProgreso.setVisibility(View.GONE);
+                            } else {
+                                Toast.makeText(VoiceToText.this, "No se ha podido subir el texto a la base de datos", Toast.LENGTH_SHORT).show();
+                                barraDeProgreso.setVisibility(View.GONE);
+                            }
+
+                        }
+                    });
                 }
                 break;
             }
         }
     }
+
 }
