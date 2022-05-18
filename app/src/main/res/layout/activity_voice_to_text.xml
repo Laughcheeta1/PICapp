@@ -21,26 +21,28 @@
         android:textSize="40dp" />
 
     <TextView
-        android:layout_margin="30dp"
+        android:id="@+id/MuestraVoice"
         android:layout_width="500dp"
         android:layout_height="300dp"
-        android:layout_below="@id/Iniciar"
+        android:layout_below="@id/IniciarVoice"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/black"
         android:text="Aqui iria una animacion junto con los subtitulos"
         android:textColor="@color/white"
-        android:textSize="30dp"
-        android:background="@color/black"
-        />
+        android:textSize="30dp" />
 
 
     <Button
-        android:id="@+id/Iniciar"
+        android:id="@+id/IniciarVoice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/Titulo"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="Start Voice Text"
-        />
+        android:text="Start Voice Text" />
 
     <Button
         android:id="@+id/VolverMain"
