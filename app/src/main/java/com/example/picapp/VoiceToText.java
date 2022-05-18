@@ -36,7 +36,12 @@ public class VoiceToText extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_voice_to_text);
 
         goMainPage = (Button) findViewById(R.id.VolverMain);
-        goMainPage.setOnClickListener(this);
+        goMainPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(VoiceToText.this, MainPage.class));
+            }
+        });
 
         iniciarVoice = (Button) findViewById(R.id.IniciarVoice);
         iniciarVoice.setOnClickListener(this);
@@ -54,8 +59,6 @@ public class VoiceToText extends AppCompatActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.VolverMain:
-                startActivity(new Intent(this, MainPage.class));
             case R.id.IniciarVoice:
                 speak();
 
@@ -63,13 +66,13 @@ public class VoiceToText extends AppCompatActivity implements View.OnClickListen
     }
 
     private void speak() {
-        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Hola, que es lo que quieres trasncribir?");
+        Intent makeVoice = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        makeVoice.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        makeVoice.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        makeVoice.putExtra(RecognizerIntent.EXTRA_PROMPT, "Hola, que es lo que quieres trasncribir?");
 
         try {
-            startActivityForResult(intent, REQUEST_CODE_SPEECH_INPUT);
+            startActivityForResult(makeVoice, REQUEST_CODE_SPEECH_INPUT);
         } catch (Exception e) {
             Toast.makeText(VoiceToText.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }
