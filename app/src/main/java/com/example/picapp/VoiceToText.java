@@ -19,6 +19,7 @@ public class VoiceToText extends AppCompatActivity implements View.OnClickListen
     private static final int REQUEST_CODE_SPEECH_INPUT = 1000;
     Button goMainPage, iniciarVoice;
     TextView muestraVoice;
+    String textoAMandar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,8 @@ public class VoiceToText extends AppCompatActivity implements View.OnClickListen
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
 
                     muestraVoice.setText(result.get(0));
+
+                    textoAMandar= result.get(0);
                 }
                 break;
             }
